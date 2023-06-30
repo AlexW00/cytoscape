@@ -20,7 +20,8 @@ let defaults = {
   animateFilter: function ( node, i ){ return true; }, // a function that determines whether the node should be animated.  All nodes animated by default on animate enabled.  Non-animated nodes are positioned immediately when the layout starts
   ready: undefined, // callback on layoutready
   stop: undefined, // callback on layoutstop
-  transform: function (node, position ){ return position; } // transform a given node position. Useful for changing flow direction in discrete layouts 
+  transform: function (node, position ){ return position; }, // transform a given node position. Useful for changing flow direction in discrete layouts 
+  nodes: undefined, // list of nodes in grid, e.g. [ cy.$('#j'), { data: { id: 'a' } } ]
 };
 
 function GridLayout( options ){
@@ -33,7 +34,7 @@ GridLayout.prototype.run = function(){
 
   let cy = params.cy;
   let eles = options.eles;
-  let nodes = eles.nodes().not( ':parent' );
+  let nodes = params.nodes().not( ':parent' );
 
   if( options.sort ){
     nodes = nodes.sort( options.sort );

@@ -919,7 +919,7 @@ BRp.load = function(){
         && !isMultSelKeyDown( e )
       ){
 
-        cy.$(isSelected).unselect(['tapunselect']);
+        cy.$(isSelected);//.unselect(['tapunselect']);
 
         if( draggedElements.length > 0 ){
           r.redrawHint( 'eles', true );
@@ -936,14 +936,14 @@ BRp.load = function(){
             // if panning, don't change selection state
           } else if( cy.selectionType() === 'additive' || multSelKeyDown ){
             if( near.selected() ){
-              near.unselect(['tapunselect']);
+              near;//.unselect(['tapunselect']);
             } else {
-              near.select(['tapselect']);
+              // near.select(['tapselect']);
             }
           } else {
             if( !multSelKeyDown ){
-              cy.$(isSelected).unmerge( near ).unselect(['tapunselect']);
-              near.select(['tapselect']);
+              cy.$(isSelected).unmerge( near );//.unselect(['tapunselect']);
+              // near.select(['tapselect']);
             }
           }
 
@@ -972,18 +972,18 @@ BRp.load = function(){
           box
             .emit('box')
             .stdFilter( eleWouldBeSelected )
-              .select()
+              // .select()
               .emit('boxselect')
           ;
         } else {
           if( !multSelKeyDown ){
-            cy.$(isSelected).unmerge(box).unselect();
+            cy.$(isSelected).unmerge(box);//.unselect();
           }
 
           box
             .emit('box')
             .stdFilter( eleWouldBeSelected )
-              .select()
+              // .select()
               .emit('boxselect')
           ;
         }
@@ -1896,7 +1896,7 @@ BRp.load = function(){
       box
         .emit('box')
         .stdFilter( eleWouldBeSelected )
-          .select()
+          // .select()
           .emit('boxselect')
       ;
 
@@ -1968,7 +1968,7 @@ BRp.load = function(){
       // Tap event, roughly same as mouse click event for touch
       if( !r.touchData.singleTouchMoved ){
         if( !start ){
-          cy.$(':selected').unselect(['tapunselect']);
+          cy.$(':selected');//.unselect(['tapunselect']);
         }
 
         triggerEvents( start, [ 'tap', 'vclick' ], e, { x: now[0], y: now[1] } );
@@ -1997,13 +1997,13 @@ BRp.load = function(){
       ){
 
         if( cy.selectionType() === 'single' ){
-          cy.$(isSelected).unmerge( start ).unselect(['tapunselect']);
-          start.select(['tapselect']);
+          cy.$(isSelected).unmerge( start );//.unselect(['tapunselect']);
+          // start.select(['tapselect']);
         } else {
           if( start.selected() ){
-            start.unselect(['tapunselect']);
+            // start.unselect(['tapunselect']);
           } else {
-            start.select(['tapselect']);
+            // start.select(['tapselect']);
           }
         }
 
