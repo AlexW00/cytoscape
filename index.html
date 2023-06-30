@@ -14645,7 +14645,8 @@ cy.layout( options );</code></pre>
   <span class="hljs-attr">animateFilter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> node, i </span>)</span>{ <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; }, <span class="hljs-comment">// a function that determines whether the node should be animated.  All nodes animated by default on animate enabled.  Non-animated nodes are positioned immediately when the layout starts</span>
   <span class="hljs-attr">ready</span>: <span class="hljs-literal">undefined</span>, <span class="hljs-comment">// callback on layoutready</span>
   <span class="hljs-attr">stop</span>: <span class="hljs-literal">undefined</span>, <span class="hljs-comment">// callback on layoutstop</span>
-  <span class="hljs-attr">transform</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">node, position </span>)</span>{ <span class="hljs-keyword">return</span> position; } <span class="hljs-comment">// transform a given node position. Useful for changing flow direction in discrete layouts </span>
+  <span class="hljs-attr">transform</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">node, position </span>)</span>{ <span class="hljs-keyword">return</span> position; }, <span class="hljs-comment">// transform a given node position. Useful for changing flow direction in discrete layouts </span>
+  <span class="hljs-attr">nodes</span>: <span class="hljs-literal">undefined</span>, <span class="hljs-comment">// list of nodes in grid, e.g. [ cy.$(&#x27;#j&#x27;), { data: { id: &#x27;a&#x27; } } ]</span>
 };
 
 cy.layout( options );</code></pre>
