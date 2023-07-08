@@ -966,7 +966,7 @@ BRp.load = function(){
           position: { x: pos[0], y: pos[1] }
         });
 
-        var eleWouldBeSelected = function( ele ){ return ele.selectable() && !ele.selected(); };
+        var eleWouldBeSelected = function( ele ){ return ele.selectable(); };
 
         if( cy.selectionType() === 'additive' ){
           box
@@ -1891,7 +1891,7 @@ BRp.load = function(){
         position: { x: now[0], y: now[1] }
       });
 
-      var eleWouldBeSelected = function( ele ){ return ele.selectable() && !ele.selected(); };
+      var eleWouldBeSelected = function( ele ){ return ele.selectable(); };
 
       box
         .emit('box')
